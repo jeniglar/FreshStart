@@ -6,7 +6,8 @@
   "dependencies": {
     "axios": "^0.21.0",
     "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
