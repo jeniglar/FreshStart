@@ -1,11 +1,13 @@
-
+import CityScores from "./components/ScoreCard";
 
 function App() {
   return (
     <>
-    HI!
+     <CityScores/>
     </>
   );
 }
+
+
 
 export default App;
