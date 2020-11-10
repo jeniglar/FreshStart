@@ -20,7 +20,7 @@ class TopNav extends Component {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto navlink">
 
-                        <Nav.Link onClick={this.onLogout} id="logout"> Logout </Nav.Link>
+                        <i onClick={this.onLogout} id="logout" className="fa fa-sign-out fa-2x"></i>
 
 
                         </Nav>

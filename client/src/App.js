@@ -16,6 +16,7 @@ import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import CityResults from './pages/CityResults';
 import CityScores from './components/ScoreCard';
+import Survey from './components/Survey';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -47,6 +48,7 @@ function App() {
         <Switch>
 
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/survey" component={Survey} />
           <PrivateRoute exact path="/cityscores" component={CityScores} />
           <PrivateRoute exact path="/Home" component={Home} />
           <PrivateRoute exact path="/CityResults" component={CityResults} />

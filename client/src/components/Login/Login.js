@@ -54,7 +54,7 @@ render() {
 return (
       <Container className="mt-4">
         <Row>
-          {/* <div className="col s8 offset-s2"> */}
+          
             <div className="col-sm-12 pl-11.250px">
               <h2>
                 <b>Login</b> below
@@ -68,37 +68,37 @@ return (
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
-                  // error={errors.email}
+                  error={errors.email}
                   id="email"
                   type="email"
-                  // className={classnames("", {
-                  //   invalid: errors.email || errors.emailnotfound
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.email || errors.emailnotfound
+                  })}
                 />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">
-                  {/* {errors.email}
-                  {errors.emailnotfound} */}
+                <label className="pl-2" htmlFor="email"> Email</label>
+                <span className="pl-2 text-danger">
+                  {errors.email}
+                  {errors.emailnotfound}
                 </span>
               </div>
               <div className="input-field col-sm-12">
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
-                  // error={errors.password}
+                  error={errors.password}
                   id="password"
                   type="password"
                   className={classnames("", {
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">
-                  {/* {errors.password}
-                  {errors.passwordincorrect} */}
+                <label className="pl-2" htmlFor="password"> Password</label>
+                <span className="pl-2 text-danger">
+                  {errors.password}
+                  {errors.passwordincorrect}
                 </span>
               </div>
-              <div className="col-sm-12 pl-11.250px">
+              <div className="pt-2 col-sm-12 pl-11.250px">
                 <Button
                 
                   type="submit"
@@ -117,11 +117,11 @@ return (
 Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
-    // errors: PropTypes.string.isRequired
+    errors: PropTypes.string.isRequired
   };
   const mapStateToProps = state => ({
     auth: state.auth,
-    // errors: state.errors
+    errors: state.errors
   });
   export default connect(
     mapStateToProps,
