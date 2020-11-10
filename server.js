@@ -18,10 +18,10 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(bodyParser.json());
 
-// const db = require("./config/keys");
+const db = require("./config/keys").mongoURI;
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/freshstart", { useNewUrlParser: true, useUnifiedTopology: true }).then (() => console.log("Connected to database."))
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }).then (() => console.log("Connected to database."))
 .catch(err => console.log(err));
 
 // Passport

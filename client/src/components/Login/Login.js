@@ -17,6 +17,13 @@ class Login extends Component {
     };
   }
 
+  componentDidMount() {
+    // If the user is logged in and they navigate to the registration page, they will be redirected to the dashboard.
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard"); // push user to dashboard when they login
@@ -61,24 +68,24 @@ return (
                 <input
                   onChange={this.onChange}
                   value={this.state.email}
-                  error={errors.email}
+                  // error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
+                  // className={classnames("", {
+                  //   invalid: errors.email || errors.emailnotfound
+                  // })}
                 />
                 <label htmlFor="email">Email</label>
                 <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
+                  {/* {errors.email}
+                  {errors.emailnotfound} */}
                 </span>
               </div>
               <div className="input-field col-sm-12">
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
-                  error={errors.password}
+                  // error={errors.password}
                   id="password"
                   type="password"
                   className={classnames("", {
@@ -87,8 +94,8 @@ return (
                 />
                 <label htmlFor="password">Password</label>
                 <span className="red-text">
-                  {errors.password}
-                  {errors.passwordincorrect}
+                  {/* {errors.password}
+                  {errors.passwordincorrect} */}
                 </span>
               </div>
               <div className="col-sm-12 pl-11.250px">
@@ -110,11 +117,11 @@ return (
 Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired
+    // errors: PropTypes.string.isRequired
   };
   const mapStateToProps = state => ({
     auth: state.auth,
-    errors: state.errors
+    // errors: state.errors
   });
   export default connect(
     mapStateToProps,

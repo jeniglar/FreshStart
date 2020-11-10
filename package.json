@@ -14,10 +14,11 @@
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.13",
+    "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "validator": "^13.1.17",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "validator": "^13.1.17"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
