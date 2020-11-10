@@ -31,7 +31,7 @@ class Register extends Component {
       });
     }
   }
- 
+
 
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
@@ -56,67 +56,67 @@ class Register extends Component {
           <div className="col-sm-12 pl-11.250px">
             <h2> <b>Sign up</b> for an account </h2>
 
-              <p>
-                Already a member? <Link to="/login">Log in</Link>
-              </p>
+            <p>
+              Already a member? <Link to="/login">Log in</Link>
+            </p>
           </div>
 
-            <Form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames("", {
-                    invalid: errors.email
-                  })}
-                />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">{errors.email}</span>
-              </div>
-              <div className="input-field col-sm-12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password
-                  })}
-                />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">{errors.password}</span>
-              </div>
+          <Form noValidate onSubmit={this.onSubmit}>
+            <div className="input-field col-sm-12">
+              <input
+                onChange={this.onChange}
+                value={this.state.email}
+                error={errors.email}
+                id="email"
+                type="email"
+                className={classnames("", {
+                  invalid: errors.email
+                })}
+              />
+              <label htmlFor="email">Email</label>
+              <span className="red-text">{errors.email}</span>
+            </div>
+            <div className="input-field col-sm-12">
+              <input
+                onChange={this.onChange}
+                value={this.state.password}
+                error={errors.password}
+                id="password"
+                type="password"
+                className={classnames("", {
+                  invalid: errors.password
+                })}
+              />
+              <label htmlFor="password">Password</label>
+              <span className="red-text">{errors.password}</span>
+            </div>
 
-              <div className="col-sm-12 pl-11.250px">
-                <Button
-                  type="submit"
-                  className="btn btn-large"
-                >
-                  Sign up
+            <div className="col-sm-12 pl-11.250px">
+              <Button
+                type="submit"
+                className="btn btn-large"
+              >
+                Sign up
                 </Button>
-              </div>
-            </Form>
+            </div>
+          </Form>
 
         </Row>
-        
+
       </Container>
     );
   }
 }
 Register.propTypes = {
-          registerUser: PropTypes.func.isRequired,
+  registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
-          auth: state.auth,
+  auth: state.auth,
   errors: state.errors
 });
 export default connect(
   mapStateToProps,
-        { registerUser}
+  { registerUser }
 )(withRouter(Register));

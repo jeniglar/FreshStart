@@ -47,10 +47,10 @@ function App() {
         <Switch>
 
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/cityscores" component={CityScores} />
-          <Route exact path="/Home" component={Home} />
-          <Route exact path="/CityResults" component={CityResults} />
-          <Route exact path="/Favorites" component={Favorites} />
+          <PrivateRoute exact path="/cityscores" component={CityScores} />
+          <PrivateRoute exact path="/Home" component={Home} />
+          <PrivateRoute exact path="/CityResults" component={CityResults} />
+          <PrivateRoute exact path="/Favorites" component={Favorites} />
         </Switch>
 
       </Router>
