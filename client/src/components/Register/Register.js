@@ -25,7 +25,10 @@ class Register extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard"); // push user to dashboard when they login
+    }
+if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
       });
@@ -73,8 +76,8 @@ class Register extends Component {
                   invalid: errors.email
                 })}
               />
-              <label htmlFor="email">Email</label>
-              <span className="red-text">{errors.email}</span>
+              <label className="pl-2" htmlFor="email"> Email</label>
+              <span className="pl-2 text-danger">{errors.email}</span>
             </div>
             <div className="input-field col-sm-12">
               <input
@@ -87,11 +90,11 @@ class Register extends Component {
                   invalid: errors.password
                 })}
               />
-              <label htmlFor="password">Password</label>
-              <span className="red-text">{errors.password}</span>
+              <label className="pl-2" htmlFor="password"> Password</label>
+              <span className="pl-2 text-danger">{errors.password}</span>
             </div>
 
-            <div className="col-sm-12 pl-11.250px">
+            <div className="pt-2 col-sm-12 pl-11.250px">
               <Button
                 type="submit"
                 className="btn btn-large"
