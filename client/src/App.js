@@ -8,11 +8,14 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import CityScores from "./components/ScoreCard";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./components/Dashboard";
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import CityResults from './pages/CityResults';
+import CityScores from './components/ScoreCard';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -23,7 +26,7 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
@@ -38,21 +41,19 @@ function App() {
     <Provider store={store}>
       <Router>
 
-          <Route exact path="/" component={Register} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <Switch>
+        <Route exact path="/" component={Register} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Switch>
 
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/cityscores" component={CityScores} />
-          
-          </Switch>
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/cityscores" component={CityScores} />
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/CityResults" component={CityResults} />
+          <Route exact path="/Favorites" component={Favorites} />
+        </Switch>
 
       </Router>
     </Provider>
-  );
-}
-
-
-
+  )};
 export default App;

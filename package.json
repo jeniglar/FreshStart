@@ -16,7 +16,8 @@
     "mongoose": "^5.10.13",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "validator": "^13.1.17"
+    "validator": "^13.1.17",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
