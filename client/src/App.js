@@ -16,7 +16,7 @@ import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import CityResults from './pages/CityResults';
 import CityScores from './components/ScoreCard';
-import Survey from './components/Survey';
+import Survey from './components/Survey/Survey';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

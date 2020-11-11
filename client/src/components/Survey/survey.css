@@ -1,0 +1,6 @@
+.card {
+    display: inline-block;
+    width: 25rem;
+    background-color: #d5d3c5!important;
+    border-color: black!important;
+}
