@@ -1,57 +1,29 @@
 import React, { Component } from 'react';
-import API from "../utils/api/api";
-
+import API from "../utils/API";
+import { Card } from 'react-bootstrap';
 
 class CityScores extends Component {
-    state = {
-        scores: {},
-        search: "Philadelphia",
-    };
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
+   constructor(props) {
+        super(props)
+   }
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        this.setState({
-            search: ""
-        }) ;
-        this.displayCityScores();
-    };
 
-    displayCityScores = () => {
-        API(this.state.search)
-        .then(res => 
-            this.setState( {scores: res.data} )
-          )
-          .catch(err => console.log(err));
-      };
- 
- 
     render() {
         return (
             <>
-            {this.state.scores.length ? (
-            <div> 
-            {this.state.scores.map(cityData => (
-                cityData.categories.name
-                // cityData.categories[i].score_out_of_10;
-                // cityData.categories[i].color;
-            ))}
-            </div>
-            
-            ) : (
-            
-            <div>False Section</div>)}
+                        <div>
+                            {this.props.scores.categories.map(cityData => (
+                                cityData.categories.name,
+                                cityData.categories.score_out_of_10
+                                // cityData.categories[i].color;
+                            ))}
+                        </div>
             </>
         )
     }
-       
-    }
+
+}
 
 
-    export default CityScores;
+export default CityScores;
