@@ -12,7 +12,7 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./components/Dashboard";
-import Home from './pages/Home';
+import CitySearch from './pages/Home';
 import Favorites from './pages/Favorites';
 import CityResults from './pages/CityResults';
 import CityScores from './components/ScoreCard';
@@ -49,8 +49,7 @@ function App() {
 
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/survey" component={Survey} />
-          <PrivateRoute exact path="/cityscores" component={CityScores} />
-          <PrivateRoute exact path="/Home" component={Home} />
+          <PrivateRoute exact path="/Home" component={CitySearch} />
           <PrivateRoute exact path="/CityResults" component={CityResults} />
           <PrivateRoute exact path="/Favorites" component={Favorites} />
         </Switch>
