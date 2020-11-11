@@ -13,9 +13,11 @@ class CityScores extends Component {
         return (
             <>
                         <div>
-                            {this.props.scores.categories.map(cityData => (
-                                cityData.categories.name,
-                                cityData.categories.score_out_of_10
+                            {this.props.scores.categories.map((cityData,i) => (
+                                <div key={i}>
+                                    <div>{cityData.name}</div>
+                                    <div>{cityData.score_out_of_10}</div>
+                                </div>
                                 // cityData.categories[i].color;
                             ))}
                         </div>
