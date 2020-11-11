@@ -5,6 +5,10 @@ export default {
     getCity: function (searchedCity) {
         return axios.get(`https://api.teleport.org/api/urban_areas/slug:${searchedCity}/scores`);
     },
+
+    getImage: function (searchedCity) {
+        return axios.get(`https://api.teleport.org/api/urban_areas/slug:${searchedCity}/images`); 
+    },
    
     saveCity: function (cityData) {
         return axios.post("/api/posts", cityData).then(result => result.data);

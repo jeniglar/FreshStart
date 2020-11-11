@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import CityScores from '../components/ScoreCard';
 import API from "../utils/API";
+import { Container, Form, Button } from "react-bootstrap";
 
 
 class CitySearch extends Component {
     state = {
         scores: {},
+        image: {},
         search: "",
     };
 
@@ -20,6 +22,7 @@ class CitySearch extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         this.displayCityScores();
+        this.displayCityImage();
     };
 
     displayCityScores = () => {
@@ -32,18 +35,29 @@ class CitySearch extends Component {
             .catch(err => console.log(err));
     };
 
+    displayCityImage = () => {
+        API.getImage(this.state.search)
+            .then(res => {
+                this.setState({ image: res.data });
+                console.log(res.data);
+            }
+            )
+            .catch(err => console.log(err));
+    };
+
     render() {
     return (
         <>
-            <h1>HOMEPAGE</h1>
-            <form>
+        <Container>
+            <Form>
                 <input onChange={this.handleInputChange} id="cityName" placeholder="Search City..."></input>
-                <button onClick={this.handleFormSubmit} id="citySearchButton">Search</button>
-            </form>
+                <Button onClick={this.handleFormSubmit} id="citySearchButton">Search</Button>
+            </Form>
             {Object.keys(this.state.scores).length > 0 ? (
-                <CityScores scores={this.state.scores}/>
+                <CityScores scores={this.state.scores} search={this.state.search}/>
                  ) : (
                     <div>Sorry, there are currently no results for this city.</div>)}
+        </Container>
         </>
     )
 }
