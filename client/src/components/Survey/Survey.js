@@ -11,11 +11,16 @@ import { Container, Card, Row, Button } from "react-bootstrap";
 function Survey (props) {
   console.log(props);
   const { user } = props.auth
+  const [userSurvey, setUserSurvey] = useState({
+    healthcare: 1,
+    safety: 2,
+    commute: 3
+  })
   
     return (
       <>
 
-        <Container className="flex">
+        <Container className="mt-4 flex">
           <Row className="justify-content-center">
             <div className="text-center">
               <h4> Rank the following from 1-10</h4>
