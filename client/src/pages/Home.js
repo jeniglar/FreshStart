@@ -32,10 +32,6 @@ class CitySearch extends Component {
             .catch(err => console.log(err));
     };
 
-    componentDidMount() {
-        this.displayCityScores();
-    }
-
     render() {
     return (
         <>
@@ -44,8 +40,8 @@ class CitySearch extends Component {
                 <input onChange={this.handleInputChange} id="cityName" placeholder="Search City..."></input>
                 <button onClick={this.handleFormSubmit} id="citySearchButton">Search</button>
             </form>
-            {this.state.scores.length ? (
-                <CityScores />
+            {Object.keys(this.state.scores).length > 0 ? (
+                <CityScores scores={this.state.scores}/>
                  ) : (
                     <div>Sorry, there are currently no results for this city.</div>)}
         </>
