@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions"
 import { Container, Button } from "react-bootstrap";
 import TopNav from "./Navbar";
+// import SurveyResults from "./SurveyResults"
 
 
 class Dashboard extends Component {
@@ -18,6 +19,7 @@ class Dashboard extends Component {
     return (
       <>
         <TopNav />
+        {/* <SurveyResults /> */}
         <Container className="mt-4">
           <div className="row">
             <div className="col-sm-12 center-align">

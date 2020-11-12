@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema
 
-const CitySchema = new Schema({
+const PlaceSchema = new Schema({
     email: 
         {type: String,
         required: true,
@@ -9,6 +9,6 @@ const CitySchema = new Schema({
    
 });
 
-const City = mongoose.model("City", CitySchema);
+const Place = mongoose.model("Place", PlaceSchema);
 
-module.exports = User;
+module.exports = Place;
