@@ -14,52 +14,62 @@ function Survey(props) {
     {
       name: "Safety",
       position: 0,
-      surveyID: 0
+      surveyID: 0,
+      user: user.id
     },
     {
       name: "Education",
       position: 1,
       surveyID: 1,
+      user: user.id
     },
     {
       name: "Commute",
       position: 2,
-      surveyID: 2
+      surveyID: 2,
+      user: user.id
     },
     {
       name: "Outdoors",
       position: 3,
-      surveyID: 3
+      surveyID: 3,
+      user: user.id
     },
     {
       name: "Healthcare",
       position: 4,
-      surveyID: 4
+      surveyID: 4,
+      user: user.id
     },
     {
       name: "Environmental Quality",
       position: 5,
-      surveyID: 5
+      surveyID: 5,
+      user: user.id
     },
     {
       name: "Culture",
       position: 6,
-      surveyID: 6
+      surveyID: 6,
+      user: user.id
     },
     {
       name: "Economy",
       position: 7,
-      surveyID: 7
+      surveyID: 7,
+      user: user.id
     },
     {
       name: "Housing",
       position: 8,
-      surveyID: 8
+      surveyID: 8,
+      user: user.id
     },
     {
       name: "Cost of Living",
       position: 9,
-      surveyID: 9
+      surveyID: 9,
+      user: user.id
     },
 
   ]);
