@@ -3,9 +3,11 @@ const surveyCtrl = require('../controllers/survey-ctrl')
 
 
 
-// router.post('/survey', SurveyCtrl.createSurvey)
 router.route("/")
     .post(surveyCtrl.createSurvey)
+    .get(surveyCtrl.findSurvey)
+
+router.route("/user/:user")
     .get(surveyCtrl.findSurvey)
 
 

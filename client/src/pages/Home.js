@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import CityScores from '../components/ScoreCard';
 import API from "../utils/API";

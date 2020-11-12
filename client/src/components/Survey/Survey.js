@@ -6,6 +6,7 @@ import "./survey.css"
 import API from "../../utils/API";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import TopNav from "../Navbar";
 
 function Survey(props) {
   console.log(props)
@@ -83,10 +84,10 @@ function Survey(props) {
     API.saveSurvey(
       userSurvey
     )
-    .then(surveyData => {
-      console.log("survey saved!")
-      console.log(surveyData)
-    }).catch(err => console.log(err));
+      .then(surveyData => {
+        console.log("survey saved!")
+        console.log(surveyData)
+      }).catch(err => console.log(err));
   }
 
   const SortableItem = SortableElement(({ value, index }) => (
@@ -119,26 +120,29 @@ function Survey(props) {
 
 
   return (
-    <Container className="mt-4 flex">
-      <Row className="justify-content-center pt-4">
-        <div className="text-center">
-          <h4> Rank the following from top to bottom</h4>
-          <h6> With the top being the most important to you and the bottom being the least.</h6>
-        </div>
-      </Row>
-      <Row className="justify-content-center mt-4">
-      <Card className="mr-3">
-        <Card.Body>
-          <h6 className="text-center"> Options </h6>
-          <SortableList items={userSurvey} onSortEnd={onSortEnd} axis="xy" />
-        </Card.Body>
-      </Card>
-      </Row>
-      <Row className="justify-content-center mt-4">
-      <Button className="mr-2" onClick={handleFormSubmit}> Save </Button>
-      <Button> Search Cities </Button>
-      </Row>
-    </Container>
+    <>
+      <TopNav />
+      <Container className="mt-4 flex">
+        <Row className="justify-content-center pt-4">
+          <div className="text-center">
+            <h4> Rank the following from top to bottom</h4>
+            <h6> With the top being the most important to you and the bottom being the least.</h6>
+          </div>
+        </Row>
+        <Row className="justify-content-center mt-4">
+          <Card className="mr-3">
+            <Card.Body>
+              <h6 className="text-center"> Options </h6>
+              <SortableList items={userSurvey} onSortEnd={onSortEnd} axis="xy" />
+            </Card.Body>
+          </Card>
+        </Row>
+        <Row className="justify-content-center mt-4">
+          <Button className="mr-2" onClick={handleFormSubmit}> Save </Button>
+          <Button href="/home"> Search Cities </Button>
+        </Row>
+      </Container>
+    </>
   );
 };
 
