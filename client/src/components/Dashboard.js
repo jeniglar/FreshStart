@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions"
 import { Container, Button } from "react-bootstrap";
 import TopNav from "./Navbar";
-// import SurveyResults from "./SurveyResults"
+// eslint-disable-next-line no-unused-vars
+import SurveyResults from "./SurveyResults"
 
 
 class Dashboard extends Component {
@@ -13,27 +14,33 @@ class Dashboard extends Component {
     this.props.logoutUser();
   };
 
+
   render() {
+
     const { user } = this.props.auth;
     console.log(this.props.auth.user);
     return (
       <>
         <TopNav />
-        {/* <SurveyResults /> */}
+
         <Container className="mt-4">
           <div className="row">
             <div className="col-sm-12 center-align">
               <h3 className="mb-4">
                 <b>Welcome to your Fresh Start,</b> {user.email}!
             </h3>
-              <Button
-                onClick={this.onCitiesClick}
-                className="btn btn-large"
+              <Container className="justify-content-center">
+              <SurveyResults />
+              <Button 
+                href="/home"
+                className="btn btn-primary mt-2 mr-2"
               >
                 Search Cities
             </Button>
-            <Button onClick={this.onSurveyClick}
-                className="btn btn-large"> Take Survey </Button>
+              <Button href="/survey"
+                className="btn btn-primary mt-2"> Take Survey </Button>
+              </Container>
+              
             </div>
           </div>
         </Container>

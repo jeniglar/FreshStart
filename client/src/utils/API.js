@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import axios from "axios";
 
 export default {
@@ -22,8 +23,12 @@ export default {
         return axios.post("/api/survey", surveyData);
     },
 
-    findSurvey: function (surveyData) {
-        return axios.get("/api/survey", surveyData);
+    findSurvey: function () {
+        return axios.get("/api/survey");
+    },
+
+    findAllSurveyAnswers: function (user) {
+        return axios.get("/api/survey/user/" + user)
     }
  };
 
