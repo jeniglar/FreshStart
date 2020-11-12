@@ -16,6 +16,10 @@ export default {
 
     savedCities: function () {
         return axios.get("/api/posts").then(result => result.data);
+    },
+
+    saveSurvey: function (surveyData) {
+        return axios.post("/api/survey", surveyData);
     }
  };
 

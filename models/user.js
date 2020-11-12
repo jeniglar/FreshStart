@@ -5,10 +5,16 @@ const UserSchema = new Schema({
     email: 
         {type: String,
         required: true,
-        unique: true},
+        unique: true
+    },
     password: 
         {type: String,
-        required: true}
+        required: true
+    },
+    surveys: 
+        {type: mongoose.Schema.Types.ObjectId,
+        ref: "Survey"}
+        
 });
 
 const User = mongoose.model("User", UserSchema);

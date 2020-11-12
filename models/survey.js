@@ -5,16 +5,20 @@ const Schema = mongoose.Schema;
 const SurveySchema = new Schema ({
     name: {
         type: String,
-        required: true
+        
     },
     position: {
         type: Number,
-        required: true
+        
     },
-    id: {
+    surveyID: {
         type: Number,
-        required: true
-    }
+        
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+        }
 
 
 });
