@@ -1,4 +1,5 @@
 const db = require("../models")
+const mongoose = require("mongoose");
 
 
 module.exports = {
@@ -13,5 +14,13 @@ module.exports = {
             
         }).catch(err => console.log(err));
         
+    },
+
+    findSurvey: function (req, res) {
+        console.log("@@@@@@@@@@")
+        console.log(req.body)
+        console.log(req.params)
+        db.Survey.find({user: mongoose.Types.ObjectId(req.params.user)})
+
     }
 }

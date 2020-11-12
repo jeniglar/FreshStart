@@ -20,6 +20,10 @@ export default {
 
     saveSurvey: function (surveyData) {
         return axios.post("/api/survey", surveyData);
+    },
+
+    findSurvey: function (surveyData) {
+        return axios.get("/api/survey", surveyData);
     }
  };
 
