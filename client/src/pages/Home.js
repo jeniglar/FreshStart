@@ -54,7 +54,7 @@ class CitySearch extends Component {
                 <Button onClick={this.handleFormSubmit} id="citySearchButton">Search</Button>
             </Form>
             {Object.keys(this.state.scores).length > 0 ? (
-                <CityScores scores={this.state.scores} search={this.state.search}/>
+                <CityScores scores={this.state.scores} search={this.state.search} image={this.state.image} />
                  ) : (
                     <div>Sorry, there are currently no results for this city.</div>)}
         </Container>
