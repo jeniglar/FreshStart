@@ -12,7 +12,7 @@
 
 ## About
 
-Check out the deployed app here: 
+Check out the deployed app here: https://freshstart123.herokuapp.com/
 
 ## Technologies
 
@@ -37,7 +37,7 @@ Check out the deployed app here:
 
 ## Installation
 
-Run npm install to install the required dependencies.
+Run npm install in both the client and root folders to install the required dependencies.
 
 ## License
 
@@ -45,4 +45,4 @@ Run npm install to install the required dependencies.
 
 ## Usage
 
-Run npm start to test locally.
+Run 'npm run start' in your terminal to test locally.
