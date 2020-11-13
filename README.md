@@ -1,6 +1,6 @@
 # FreshStart ![license](https://img.shields.io/static/v1?label=License&message=MIT&color=lightgreen) 🌳 🏙
 
-![freshstartgif]()
+![freshstartgif](https://github.com/jeniglar/FreshStart/blob/main/assets/freshstart.gif?raw=true)
  ## Table of Contents
   
  - [About](#About)
