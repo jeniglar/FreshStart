@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions"
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Row } from "react-bootstrap";
 import TopNav from "./Navbar";
 // eslint-disable-next-line no-unused-vars
 import SurveyResults from "./SurveyResults"
@@ -29,8 +29,11 @@ class Dashboard extends Component {
               <h3 className="mb-4">
                 <b>Welcome to your Fresh Start,</b> {user.email}!
             </h3>
-              <Container className="justify-content-center">
+              <Container>
+                <Row className="justify-content-center">
               <SurveyResults />
+              </Row>
+              <Row className="justify-content-center">
               <Button 
                 href="/home"
                 className="btn btn-primary mt-2 mr-2"
@@ -39,6 +42,7 @@ class Dashboard extends Component {
             </Button>
               <Button href="/survey"
                 className="btn btn-primary mt-2"> Take Survey </Button>
+              </Row>
               </Container>
               
             </div>
