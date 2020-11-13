@@ -52,11 +52,11 @@ class CitySearch extends Component {
         <>
         <TopNav/>
         <Container className="mt-4">
-            <Row className="mt-4"> 
-                <h2> Search for a city </h2>
+            <Row className="mt-4 mb-2"> 
+                <h2> Search Cities </h2>
             </Row>
             <Form>
-                <input onChange={this.handleInputChange} id="cityName" placeholder="e.g. 'omaha'"></input>
+                <input className="pt-2"onChange={this.handleInputChange} id="cityName" placeholder="e.g. 'omaha'"></input>
                 <Button className="ml-2 mb-2" onClick={this.handleFormSubmit} id="citySearchButton">Search</Button>
             </Form>
             {Object.keys(this.state.scores).length > 0 ? (

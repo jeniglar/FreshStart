@@ -1,6 +1,7 @@
 body {
     background-image: url('../src/assets/images/login.jpg');
     background-size: cover;
+    background: fixed;
     /* height: 100vh; */
 }
 
@@ -10,6 +11,8 @@ body {
     font-weight: 400;
     background-color: #d5d3c5!important;
     border-color: black!important;
+    
+    
 }
 
 .survey-card {
@@ -17,10 +20,23 @@ body {
     line-height: 1.5em;
 }
 
-.score-card {
+
+.scoreCard {
     background-color: #d5d3c5!important;
     width: 25rem;
     display: inline-block!important;
-    max-height: 100px;
-    overflow-y: auto;
+    overflow: scroll!important;
+    max-height: 700px!important;
+    scrollbar-color: #d5d3c5!important; 
 }
+
+/* img {
+    float: center;
+    width:  800px;
+    height: 500px;
+    object-fit: cover;
+} */
+
+.scrollable-element {
+    scrollbar-color: #d5d3c5!important;
+  }

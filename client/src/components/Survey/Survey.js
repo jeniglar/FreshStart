@@ -72,6 +72,48 @@ function Survey(props) {
       surveyID: 9,
       user: user.id
     },
+    {
+      name: "Venture Capital",
+      position: 10,
+      surveyID: 10,
+      user: user.id
+    },
+    {
+      name: "Business Freedom",
+      position: 11,
+      surveyID: 11,
+      user: user.id
+    },
+    {
+      name: "Travel/Connectivity",
+      position: 12,
+      surveyID: 12,
+      user: user.id
+    },
+    {
+      name: "Startups",
+      position: 13,
+      surveyID: 13,
+      user: user.id
+    },
+    {
+      name: "Taxation",
+      position: 14,
+      surveyID: 14,
+      user: user.id
+    },
+    {
+      name: "Internet Access",
+      position: 15,
+      surveyID: 15,
+      user: user.id
+    },
+    {
+      name: "Tolerance",
+      position: 16,
+      surveyID: 16,
+      user: user.id
+    },
 
   ]);
 
@@ -91,9 +133,9 @@ function Survey(props) {
   }
 
   const SortableItem = SortableElement(({ value, index }) => (
-    <div className="list__card" index={index}>
-      <div className="list__card-right">
-        <div className="list__card-right--name"> {value.name} </div>
+    <div className="list_card" index={index}>
+      <div className="list__card">
+        <div className="list_card_name"> {value.position + 1}. {value.name} </div>
       </div>
     </div>
   ));
@@ -122,7 +164,7 @@ function Survey(props) {
   return (
     <>
       <TopNav />
-      <Container className="mt-4 flex">
+      <Container className="mt-4">
         <Row className="justify-content-center pt-4">
           <div className="text-center">
             <h3> Rank the following from most to least important to you</h3>
@@ -131,8 +173,7 @@ function Survey(props) {
         </Row>
         <Row className="justify-content-center mt-4">
           <Card className="survey-card mr-3">
-            <Card.Body className="text-center">
-              <h4> Options </h4>
+            <Card.Body>
               <SortableList items={userSurvey} onSortEnd={onSortEnd} axis="xy" />
             </Card.Body>
           </Card>
