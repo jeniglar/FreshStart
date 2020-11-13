@@ -7,11 +7,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 function SurveyResults(props) {
-    console.log(props)
+    // console.log(props)
     const { user } = props.auth;
     const [userResults, setUserResults] = useState({
-        name: "",
-        position: 0
     });
 
 
@@ -20,38 +18,24 @@ function SurveyResults(props) {
     useEffect(() => {
         API.findAllSurveyAnswers({ user })
             .then(data => {
-                console.log(data)
+                console.log(data.data[1])
+                console.log("////////")
+                setUserResults(data.data)
             }).catch(err => console.log(err))
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // useEffect(() => {
-    //     API.findSurvey(props.user)
-    //         .then(data => {
-    //             console.log(`@@@@@@@`)
-    //             console.log(data.data)
-    //             if (data.data[0]) {
-    //             setUserResults(data.data)
-    //             }
-    //         })
-    //         .catch(err => console.log(err));
-    // // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
-    // useEffect(() => {
-    //     console.log(props);
-    //     API.findSurvey(props.user)
-    //         .then(results => {
-    //             console.log("##########")
-    //             console.log(results.data)
-    //         })
-    // }).catch(err => console.log(err))
 
     return (
         <>
             <Card>
                 <h2> {userResults.name} </h2>
+                <h3> {user.id} </h3>
                 {console.log(userResults)}
+                {console.log("USERRESULTS RIGHT HERE")}
                 {console.log(props)}
+                {console.log("PROPS LOGGING HERE ^^^")}
+                {console.log({ user })}
             </Card>
         </>
     )

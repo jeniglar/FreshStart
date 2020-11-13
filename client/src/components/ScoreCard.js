@@ -12,8 +12,9 @@ class CityScores extends Component {
     render() {
         return (
             <>
+                {/* <img src={this.props.image.photos[0].image.mobile}/> */}
                 <Card style={{ width: '30rem' }}>
-                    <Card.Img variant="top" src={this.props.image.photos[0].image.mobile} />
+                    <Card.Img variant="top" src={this.props.photos[0].image.mobile} />
                     <Card.Body>
                         <Card.Title>{this.props.search}</Card.Title>
                     </Card.Body>
