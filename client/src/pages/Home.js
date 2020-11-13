@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import CityScores from '../components/ScoreCard';
 import API from "../utils/API";
 import { Container, Form, Button } from "react-bootstrap";
+import TopNav from "../components/Navbar";
 
 
 class CitySearch extends Component {
@@ -49,6 +50,7 @@ class CitySearch extends Component {
     render() {
     return (
         <>
+        <TopNav/>
         <Container>
             <Form>
                 <input onChange={this.handleInputChange} id="cityName" placeholder="Search City..."></input>
@@ -57,7 +59,7 @@ class CitySearch extends Component {
             {Object.keys(this.state.scores).length > 0 ? (
                 <CityScores scores={this.state.scores} search={this.state.search} image={this.state.image} />
                  ) : (
-                    <div>Sorry, there are currently no results for this city.</div>)}
+                    <div></div>)}
         </Container>
         </>
     )
