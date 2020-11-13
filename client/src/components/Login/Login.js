@@ -53,12 +53,16 @@ render() {
     const { errors } = this.state;
 return (
       <Container className="mt-4">
+        <Row className="pt-4">
+          <h1> Discover your <b>Fresh Start</b> </h1>
+        </Row>
         <Row>
+          <h6> ...find the cities that line up with what's most important to you. </h6>
+        </Row>
+        <Row className="mt-4">
           
             <div className="col-sm-12 pl-11.250px">
-              <h2>
-                <b>Login</b> below
-              </h2>
+              
               <p>
                 Don't have an account? <Link to="/register">Register</Link>
               </p>

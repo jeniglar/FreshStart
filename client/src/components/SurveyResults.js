@@ -29,7 +29,7 @@ function SurveyResults(props) {
     return (
         <>
             <Card>
-                <h2> {userResults.name} </h2>
+                {/* <h2> {userResults.map(result )} </h2> */}
                 <h3> {user.id} </h3>
                 {console.log(userResults)}
                 {console.log("USERRESULTS RIGHT HERE")}
