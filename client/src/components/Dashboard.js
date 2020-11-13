@@ -31,10 +31,13 @@ class Dashboard extends Component {
             </h3>
               <Container>
                 <Row className="justify-content-center">
-                <Card className="pt-4 pb-4">
+                <Card className="mt-4 pt-4 pb-4">
                   <Card.Body>
                   <Row className="justify-content-center text-center">
-                    <div> Start out your search by first ranking the options (e.g. commute, cost of living, safety) provided. When you search a city you're intersted in, then you will the it's ranking in each category, plus the overall ranking versus your ranking so you can determine which spots best line up with what is most important to you!  </div>
+                    <div className="pl-2 pr-2"> <p>Start out your search by first ranking the options (e.g. commute, cost of living, safety) provided. When you search a city you're intersted in, you will see it's ranking in each category, plus the overall ranking versus your ranking so you can determine which spots best line up with what is most important to you!</p>
+                    <p> We use the teleport API to determine the score for each category. Visit <a target="_blank" href ="https://teleport.org/"> Teleport</a> to learn more! </p>
+                      
+                     </div>
                   </Row>
                   <Row className="justify-content-center pt-4">
                     
@@ -57,6 +60,7 @@ class Dashboard extends Component {
             </div>
           </div>
         </Container>
+        {/* <SurveyResults /> */}
       </>
     );
   }
