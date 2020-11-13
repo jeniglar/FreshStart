@@ -23,9 +23,9 @@ export default {
         return axios.post("/api/survey", surveyData);
     },
 
-    findSurvey: function () {
-        return axios.get("/api/survey");
-    },
+    // findSurvey: function () {
+    //     return axios.get("/api/survey");
+    // },
 
     findAllSurveyAnswers: function (user) {
         return axios.get("/api/survey/user/" + user)

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import CityScores from '../components/ScoreCard';
 import API from "../utils/API";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Row } from "react-bootstrap";
 import TopNav from "../components/Navbar";
 
 
@@ -51,10 +51,13 @@ class CitySearch extends Component {
     return (
         <>
         <TopNav/>
-        <Container>
+        <Container className="mt-4">
+            <Row className="mt-4"> 
+                <h2> Search for a city </h2>
+            </Row>
             <Form>
-                <input onChange={this.handleInputChange} id="cityName" placeholder="Search City..."></input>
-                <Button onClick={this.handleFormSubmit} id="citySearchButton">Search</Button>
+                <input onChange={this.handleInputChange} id="cityName" placeholder="e.g. 'omaha'"></input>
+                <Button className="ml-2 mb-2" onClick={this.handleFormSubmit} id="citySearchButton">Search</Button>
             </Form>
             {Object.keys(this.state.scores).length > 0 ? (
                 <CityScores scores={this.state.scores} search={this.state.search} image={this.state.image} />

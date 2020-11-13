@@ -125,14 +125,14 @@ function Survey(props) {
       <Container className="mt-4 flex">
         <Row className="justify-content-center pt-4">
           <div className="text-center">
-            <h4> Rank the following from top to bottom</h4>
-            <h6> With the top being the most important to you and the bottom being the least.</h6>
+            <h3> Rank the following from most to least important to you</h3>
+            <h6> Use your mouse to drag each option up (for most) or down (for least.)</h6>
           </div>
         </Row>
         <Row className="justify-content-center mt-4">
-          <Card className="mr-3">
-            <Card.Body>
-              <h6 className="text-center"> Options </h6>
+          <Card className="survey-card mr-3">
+            <Card.Body className="text-center">
+              <h4> Options </h4>
               <SortableList items={userSurvey} onSortEnd={onSortEnd} axis="xy" />
             </Card.Body>
           </Card>

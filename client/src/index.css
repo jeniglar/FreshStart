@@ -1,0 +1,26 @@
+body {
+    background-image: url('../src/assets/images/login.jpg');
+    background-size: cover;
+    /* height: 100vh; */
+}
+
+.card {
+    display: inline-block;
+    width: 60rem;
+    font-weight: 400;
+    background-color: #d5d3c5!important;
+    border-color: black!important;
+}
+
+.survey-card {
+    width: 30rem;
+    line-height: 1.5em;
+}
+
+.score-card {
+    background-color: #d5d3c5!important;
+    width: 25rem;
+    display: inline-block!important;
+    max-height: 100px;
+    overflow-y: auto;
+}
