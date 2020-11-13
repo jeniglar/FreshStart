@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SortableContainer, SortableElement } from "react-sortable-hoc";
 import arrayMove from "array-move";
-import { Container, Card, Row, Button } from "react-bootstrap";
+import { Container, Card, Row, Button, Modal } from "react-bootstrap";
 import "./survey.css"
 import API from "../../utils/API";
 import PropTypes from "prop-types";
@@ -9,6 +9,12 @@ import { connect } from "react-redux";
 import TopNav from "../Navbar";
 
 function Survey(props) {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   console.log(props)
   const { user } = props.auth;
   const [userSurvey, setUserSurvey] = useState([
@@ -161,6 +167,7 @@ function Survey(props) {
   };
 
 
+
   return (
     <>
       <TopNav />
@@ -169,6 +176,9 @@ function Survey(props) {
           <div className="text-center">
             <h3> Rank the following from most to least important to you</h3>
             <h6> Use your mouse to drag each option up (for most) or down (for least.)</h6>
+            <div> <Button variant="primary" onClick={handleShow}>
+              Learn More
+      </Button> </div>
           </div>
         </Row>
         <Row className="justify-content-center mt-4">
@@ -179,9 +189,34 @@ function Survey(props) {
           </Card>
         </Row>
         <Row className="justify-content-center mt-4">
-          <Button className="mr-2" onClick={handleFormSubmit}> Save </Button>
+          <Button className="mr-2" onClick={handleFormSubmit}> Save and Search </Button>
           <Button href="/home"> Search Cities </Button>
         </Row>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Categories</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p> Teleport ranks these key categories for each city. You'll notice that there is a mix of both business and personal categories.
+
+            </p>
+            <p>
+              To give you a few examples, Teleport scores Housing based off the average cost of the small, medium, and large apartments. Cost of Living is determined by the average cost of a variety of items like a coffee, beer, as well as inflation.
+            </p>
+            <p>
+              On the business side, Venture Capital is graded by the number of funding accelerators based in the city. Startup ranking is based on a number of things, including the amount of investors and coworking spaces.
+            </p>
+            <p> Culture wise, Teleport ranks things like tolerance (LGBTQIA representation), culture(the presence of museums, historical sites, etc), and outdoors(the presence of mountians, ocean, etc.) </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+          </Button>
+          </Modal.Footer>
+        </Modal>
+
+
       </Container>
     </>
   );
