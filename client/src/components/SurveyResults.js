@@ -3,18 +3,22 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API"
 import { Card } from "react-bootstrap"
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 function SurveyResults(props) {
+    console.log(props)
+    const { user } = props.auth;
     const [userResults, setUserResults] = useState({
         name: "",
         position: 0
     });
 
-    console.log(props)
-    // const { user } = props.auth;
+
+    console.log({ user })
 
     useEffect(() => {
-        API.findAllSurveyAnswers(props.user)
+        API.findAllSurveyAnswers({ user })
             .then(data => {
                 console.log(data)
             }).catch(err => console.log(err))
@@ -53,4 +57,14 @@ function SurveyResults(props) {
     )
 }
 
-export default SurveyResults;
+SurveyResults.propTypes = {
+    auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+
+export default connect(
+    mapStateToProps
+)(SurveyResults);

@@ -1,4 +1,5 @@
-const db = require("../models")
+const db = require("../models");
+const mongoose = require("mongoose");
 
 
 module.exports = {
@@ -6,21 +7,29 @@ module.exports = {
         console.log("!!!!!!!!!!!!!!!!")
         console.log(req.body)
         db.Survey
-        .create(req.body)
-        .then(survey => {
-            res.json(survey)
-            
-            
-        }).catch(err => console.log(err));
-        
-    },
+            .create(req.body)
+            .then(survey => {
+                res.json(survey)
 
+
+            }).catch(err => console.log(err));
+
+    },
     findSurvey: function (req, res) {
+        console.log("@@@@@@@@@@@@@@@@")
+
         db.Survey
-        .find(req.params)
-        .then(surveyData => {
-            console.log(surveyData)
-            res.json(surveyData)
-        }).catch(err => console.log(err));
+            .find({})
+            .populate({
+                path: "user"
+            })
+            .then(surveyData => {
+                
+                console.log(surveyData)
+                res.json(surveyData)
+                
+            }).catch(err => console.log(err));
+            console.log("@@@@@@@@@@@@@@@@")
     }
+    
 }
