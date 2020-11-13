@@ -14,7 +14,10 @@
 
 This is a MERN stack app for users looking for a "Fresh Start." If you're ready for a change of scenery but don't know where to find it, use Fresh Start to rank the qualities you're looking for in your homebase, and then search cities to see if they fit your needs!
 
-You can use < username: test@test.com and password: test /> when using the deployed app.
+Feel free to use the following credentials when using the deployed app: 
+
+- email: test@test.com
+- password: test
 
 Check out the deployed app here: https://freshstart123.herokuapp.com/
 
